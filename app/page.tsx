@@ -15,31 +15,38 @@ export default function Home() {
 
       {/* Navigation Grid */}
       <div className="grid w-full max-w-sm gap-4 sm:max-w-md sm:grid-cols-1">
-        <TestLink 
-          href="/test" 
-          title="Static Delay" 
+        <TestLink
+          href="/test"
+          title="Static Delay"
           description="Tests 3s delay with static/dynamic rendering."
           color="hover:border-blue-500 hover:bg-blue-50/50 dark:hover:bg-blue-900/10"
         />
-        
-        <TestLink 
-          href="/test2" 
-          title="Manual Suspense" 
-          description="Tests nested components and streaming chunks." 
+
+        <TestLink
+          href="/test2"
+          title="Manual Suspense"
+          description="Tests nested components and streaming chunks."
           color="hover:border-purple-500 hover:bg-purple-50/50 dark:hover:bg-purple-900/10"
         />
 
-        <TestLink 
-          href="/fetch" 
-          title="Dynamic Fetch" 
+        <TestLink
+          href="/fetch"
+          title="Dynamic Fetch"
           description="Forces 'no-store' cache with artificial lag."
           color="hover:border-emerald-500 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10"
+        />
+
+        <TestLink
+          href="/fetchSSG" 
+          title="Dynamic Fetch ISR"
+          description="Uses ISR to fetch a new random profile every 60 seconds."
+          color="hover:border-blue-500 hover:bg-blue-50/50 dark:hover:bg-blue-900/10"
         />
       </div>
 
       {/* Footer / Status */}
       <footer className="mt-12 text-xs font-medium uppercase tracking-widest text-zinc-400">
-        Next.js 15 • React 19 • Local Testing
+        Next.js 16 • React 19 • Local Testing
       </footer>
     </div>
   );
