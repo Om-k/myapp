@@ -14,7 +14,6 @@
 
 
 async function getDelayedData() {
-  // 1. The 'no-store' flag tells Next.js: "Do NOT pre-render this page at build time"
   const res = await fetch('https://randomuser.me/api/', {
     next: { revalidate: 60 }
   });

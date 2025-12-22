@@ -1,8 +1,12 @@
+import { Navbar } from "@/components/Navbar";
+import TestLink from "@/components/TestLink";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 p-6 font-sans transition-colors dark:bg-zinc-950">
+    <>
+    <Navbar/>
+    <div className="mt-24 flex min-h-screen flex-col items-center justify-center bg-zinc-50 p-6 font-sans transition-colors dark:bg-zinc-950">
       {/* Header Section */}
       <div className="mb-10 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
@@ -40,7 +44,7 @@ export default function Home() {
           href="/fetchSSG" 
           title="Dynamic Fetch ISR"
           description="Uses ISR to fetch a new random profile every 60 seconds."
-          color="hover:border-blue-500 hover:bg-blue-50/50 dark:hover:bg-blue-900/10"
+          color="hover:border-red-500 hover:bg-red-50/50 dark:hover:bg-red-900/10"
         />
       </div>
 
@@ -49,29 +53,6 @@ export default function Home() {
         Next.js 16 • React 19 • Local Testing
       </footer>
     </div>
-  );
-}
-
-// Reusable Link Component for a clean UI
-function TestLink({ href, title, description, color }: { href: string; title: string; description: string, color: string }) {
-  return (
-    <Link
-      href={href}
-      className={`group block rounded-2xl border border-zinc-200 bg-white p-5 transition-all active:scale-95 dark:border-zinc-800 dark:bg-zinc-900 ${color}`}
-    >
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-lg font-bold text-zinc-900 dark:text-white">
-            {title}
-          </h2>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">
-            {description}
-          </p>
-        </div>
-        <span className="text-xl transition-transform group-hover:translate-x-1">
-          →
-        </span>
-      </div>
-    </Link>
+    </>
   );
 }
